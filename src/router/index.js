@@ -11,7 +11,6 @@ const Dashboard = () => import('@/views/Dashboard')
 Vue.use(Router)
 
 export default new Router({
-  mode: 'hash',
   linkActiveClass: 'active',
   scrollBehavior: () => ({ y: 0 }),
   routes: configRoutes()
@@ -27,11 +26,24 @@ function configRoutes () {
       children: [
         {
           path: 'dashboard',
-          name: 'Dashboard',
+          name: 'Dashboard',  
           component: Dashboard
         },
       ]
     },
+    // {
+    //   path: '/',
+    //   redirect: '/dashboard',
+    //   name: 'Home',
+    //   component: TheContainer,
+    //   children: [
+    //     {
+    //       path: 'dashboard',
+    //       name: 'Dashboard',
+    //       component: Dashboard
+    //     },
+    //   ]
+    // },
   ]
 }
 
