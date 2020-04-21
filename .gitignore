@@ -1,5 +1,10 @@
 # Created by https://www.gitignore.io/api/vue,visualstudiocode
-# Edit at https://www.gitignore.io/?templates=vue,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=vue,visualstudiocode  
+
+# Duan
+dist
+.vscode
+node_modules
 
 ### VisualStudioCode ###
 .vscode

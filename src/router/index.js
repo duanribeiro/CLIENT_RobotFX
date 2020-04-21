@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-// Layouts
+// Layout
 const TheContainer = () => import('@/layouts/TheContainer')
 
 // Views
@@ -10,40 +10,19 @@ const Dashboard = () => import('@/views/Dashboard')
 
 Vue.use(Router)
 
+
+const routes = [{
+  path: '/',
+  component: TheContainer,
+  children: [{
+      path: 'dashboard',
+      name: 'Dashboard',  
+      component: Dashboard
+    }]
+  },
+]
+
+
 export default new Router({
-  linkActiveClass: 'active',
-  scrollBehavior: () => ({ y: 0 }),
-  routes: configRoutes()
+  'routes': routes
 })
-
-function configRoutes () {
-  return [
-    {
-      path: '/',
-      redirect: '/dashboard',
-      name: 'Home',
-      component: TheContainer,
-      children: [
-        {
-          path: 'dashboard',
-          name: 'Dashboard',  
-          component: Dashboard
-        },
-      ]
-    },
-    // {
-    //   path: '/',
-    //   redirect: '/dashboard',
-    //   name: 'Home',
-    //   component: TheContainer,
-    //   children: [
-    //     {
-    //       path: 'dashboard',
-    //       name: 'Dashboard',
-    //       component: Dashboard
-    //     },
-    //   ]
-    // },
-  ]
-}
-
