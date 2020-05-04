@@ -5,7 +5,7 @@ import Router from 'vue-router'
 const TheContainer = () => import('@/layouts/TheContainer')
 
 // Views
-const Dashboard = () => import('@/views/Dashboard')
+const DashboardView = () => import('@/views/DashboardView')
 
 
 Vue.use(Router)
@@ -15,9 +15,9 @@ const routes = [{
   path: '/',
   component: TheContainer,
   children: [{
-      path: 'dashboard',
+      path: '',
       name: 'Dashboard',  
-      component: Dashboard
+      component: DashboardView
     }]
   },
 ]
@@ -26,3 +26,6 @@ const routes = [{
 export default new Router({
   'routes': routes
 })
+
+
+

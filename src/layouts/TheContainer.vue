@@ -1,20 +1,17 @@
 <template>
-  <div class="c-app">
-    <TheSidebar/>
-    <CWrapper>
-      <TheHeader/>
-      <div class="c-body">
-        <main class="c-main">
-          <CContainer fluid>
-            <transition name="fade">
-              <router-view></router-view>
-            </transition>
-          </CContainer>
-        </main>
-        <TheFooter/>
-      </div>
-    </CWrapper>
-  </div>
+  <v-app id="dashboard-view" dark>
+    <TheHeader/>
+
+
+    <v-content>
+      <v-fade-transition mode="out-in">
+        <router-view />
+      </v-fade-transition>
+    </v-content>
+
+    <TheFooter/>
+
+  </v-app>
 </template>
 
 <script>
