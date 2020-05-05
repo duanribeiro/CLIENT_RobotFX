@@ -13,7 +13,7 @@ import { sync } from 'vuex-router-sync'
 
 // Application imports
 import App from './App'
-import i18n from '@/i18n'
+
 import router from '@/router'
 import store from '@/store'
 import Vuetify from 'vuetify'
@@ -45,7 +45,6 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  i18n,
   router,
   store,
   render: h => h(App)
