@@ -1,4 +1,6 @@
 // https://vuex.vuejs.org/en/actions.html
+// https://medium.com/@abuoop123/why-getters-mutations-actions-in-vuex-store-77069710d2d5
+
 import axios from 'axios'
 
 // The login action passes vuex commit helper that we will use to trigger mutations.
