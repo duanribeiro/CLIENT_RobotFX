@@ -1,5 +1,3 @@
 <template>
+    <CarouselExchangeRate/>
 </template>
-
-<script>
-</script>

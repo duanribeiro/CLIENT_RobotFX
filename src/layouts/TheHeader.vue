@@ -1,18 +1,20 @@
 <template>
   <v-toolbar
-    id="core-toolbar"
-    app
-    dark
-    style="background: #424242;"
-    flat
-    prominent>
+  id="core-toolbar"
+  app
+  dark
+  style="background: #424242;"
+  flat
+  prominent
+  >
     <div class="v-toolbar-title">
       <v-toolbar-title class="font-weight-light text-general">
         <v-btn
-          v-if="responsive"
-          class="default v-btn--simple"
-          icon
-          @click.stop="onClickBtn">
+        v-if="responsive"
+        class="default v-btn--simple"
+        icon
+        @click.stop="onClickBtn"
+        >
           <v-icon>mdi-view-list</v-icon>
         </v-btn>
         {{ title }}
@@ -20,60 +22,7 @@
     </div>
 
     <v-spacer/>
-    <v-toolbar-items>
-      <v-flex
-        align-center
-        layout
-        py-2>
-        <router-link
-          v-ripple
-          class="toolbar-items"
-          to="/">
-          <v-icon color>mdi-home</v-icon>
-        </router-link>
-        <v-menu
-          bottom
-          left
-          content-class
-          offset-y
-          transition="slide-y-transition">
-          <router-link
-            v-ripple
-            slot="activator"
-            class="toolbar-items"
-            to="/dashboard/notifications"
-          >
-            <v-badge
-              color="error"
-              overlap>
-              <template slot="badge">{{ notifications.length }}</template>
-              <v-icon color>mdi-bell</v-icon>
-            </v-badge>
-          </router-link>
-          <v-card>
-            <v-list dense>
-              <v-list-tile
-                v-for="notification in notifications"
-                :key="notification"
-                @click="onClick">
-                <v-list-tile-title v-text="notification"/>
-              </v-list-tile>
-            </v-list>
-          </v-card>
-        </v-menu>
-        <router-link
-          v-ripple
-          class="toolbar-items"
-          to="/dashboard/user-profile">
-          <v-icon color>mdi-account</v-icon>
-        </router-link>
 
-        <v-icon
-          class="toolbar-items"
-          color
-          @click="logout">mdi-power</v-icon>
-      </v-flex>
-    </v-toolbar-items>
   </v-toolbar>
 </template>
 
@@ -82,13 +31,6 @@ import { mapMutations, mapGetters } from 'vuex'
 
 export default {
   data: () => ({
-    notifications: [
-      'Mike, Thanos is coming',
-      '5 new avengers joined the team',
-      "You're now friends with Capt",
-      'Another Notification',
-      'Another One - Dj Khalid voice'
-    ],
     title: 'RobotFX',
     responsive: false,
     responsiveInput: false

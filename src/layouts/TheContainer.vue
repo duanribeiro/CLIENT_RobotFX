@@ -1,8 +1,7 @@
 <template>
   <v-app id="dashboard-view" dark>
     <TheHeader/>
-
-
+    
     <v-content>
       <v-fade-transition mode="out-in">
         <router-view />
